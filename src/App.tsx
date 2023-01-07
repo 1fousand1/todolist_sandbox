@@ -14,6 +14,10 @@ function App() {
         {id:1 ,title:"Bread" , isDone: true},
         {id:2 ,title:"Butter" , isDone: true },
         {id:3 ,title:"Salt" , isDone: true},
+        {id:3 ,title:"Salt" , isDone: true},
+        {id:3 ,title:"Salt" , isDone: true},
+        {id:3 ,title:"Salt" , isDone: true},
+        {id:3 ,title:"Salt" , isDone: true}
 
     ]
     return (

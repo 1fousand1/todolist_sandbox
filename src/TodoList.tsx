@@ -12,6 +12,33 @@ export type TaskType = {
 }
 
 const TodoList: FC<TodolistPropsType> = (props) => {
+/*    let tasksList;
+    if(props.tasks.length ===0){
+        tasksList = <span>Your taskslist is empty</span>
+    } else {
+        tasksList = props.tasks.map((task:TaskType) => {
+            return (
+                <li>
+                    <input type="checkbox" checked={task.isDone}/>
+                    <span>{task.title}</span>
+                </li>
+
+            )
+        })
+    }*/
+
+    let tasksList = props.tasks.length
+        ? props.tasks.map((task:TaskType) => {
+            return (
+                <li>
+                    <input type="checkbox" checked={task.isDone}/>
+                    <span>{task.title}</span>
+                </li>
+
+            )
+        })
+        : <span>Your taskslist is empty</span>
+
     return (
         <div>
                 <h3>{props.title}</h3>
@@ -20,18 +47,7 @@ const TodoList: FC<TodolistPropsType> = (props) => {
                     <button>+</button>
                 </div>
                 <ul>
-                    <li>
-                        <input type="checkbox" checked={props.tasks[0].isDone}/>
-                        <span>{props.tasks[0].title}</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" checked={props.tasks[1].isDone}/>
-                        <span>{props.tasks[1].title}</span>
-                    </li>
-                    <li>
-                        <input type="checkbox" checked={props.tasks[2].isDone}/>
-                        <span>{props.tasks[2].title}</span>
-                    </li>
+                    {tasksList}
                 </ul>
                 <div>
                     <button>All</button>
